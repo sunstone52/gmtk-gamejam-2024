@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://buo2lbjhnkh3u"]
 
-[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_nsegk"]
-[ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://icon.svg" id="2_6ga4v"]
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_n8gar"]
+[ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="2_1csqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aj8bw"]
 size = Vector2(46, 46)
@@ -14,11 +14,11 @@ size = Vector2(46, 46)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(596, 317)
-script = ExtResource("1_nsegk")
+script = ExtResource("1_n8gar")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.359375, 0.359375)
-texture = ExtResource("2_6ga4v")
+texture = ExtResource("2_1csqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_aj8bw")
@@ -31,7 +31,7 @@ physics_material_override = SubResource("PhysicsMaterial_bxbe0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 scale = Vector2(4.58877, 0.146794)
-texture = ExtResource("2_6ga4v")
+texture = ExtResource("2_1csqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 scale = Vector2(29.28, 1)
