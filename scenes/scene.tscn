@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://buo2lbjhnkh3u"]
 
-[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_n8gar"]
+[ext_resource type="Script" path="res://scripts/CharacterBody2D.gd" id="1_cp2ry"]
 [ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="2_1csqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aj8bw"]
@@ -12,9 +12,12 @@ size = Vector2(46, 46)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(597, 382)
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(596, 317)
-script = ExtResource("1_n8gar")
+position = Vector2(597, 382)
+script = ExtResource("1_cp2ry")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.359375, 0.359375)
@@ -22,8 +25,6 @@ texture = ExtResource("2_1csqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_aj8bw")
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(589, 617)
