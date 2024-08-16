@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://buo2lbjhnkh3u"]
+[gd_scene load_steps=8 format=3 uid="uid://buo2lbjhnkh3u"]
 
 [ext_resource type="Script" path="res://scripts/CharacterBody2D.gd" id="1_cp2ry"]
 [ext_resource type="Script" path="res://scripts/QuickClose.gd" id="1_xthdt"]
 [ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="2_1csqc"]
+[ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="4_urcu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aj8bw"]
 size = Vector2(46, 46)
@@ -19,6 +20,7 @@ position = Vector2(597, 382)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(597, 382)
+input_pickable = true
 script = ExtResource("1_cp2ry")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -27,6 +29,9 @@ texture = ExtResource("2_1csqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_aj8bw")
+
+[node name="MouseControllable" type="Node" parent="CharacterBody2D"]
+script = ExtResource("4_urcu5")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(589, 617)
