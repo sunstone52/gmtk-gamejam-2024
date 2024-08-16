@@ -13,7 +13,6 @@ func _ready() -> void:
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if (event is InputEventMouseButton):
 		if (event.is_pressed()):
-			print ("pressed:", event)
 			parent.set_physics_process(false)
 			grabbed = true
 			parent.velocity.y = 0
@@ -23,10 +22,8 @@ func _input(event: InputEvent):
 	if grabbed:
 		if (event is InputEventMouseButton):
 			if (event.is_released()):
-				print ("released:", event)
 				parent.set_physics_process(true)
 				grabbed = false
 				set_process_input(false)
 		elif (event is InputEventMouseMotion):
-			print ("moved:", event)
 			parent.position += event.relative
