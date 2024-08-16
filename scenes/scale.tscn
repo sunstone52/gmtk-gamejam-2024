@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://cebi66gxphkvp"]
+
+[ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
+[ext_resource type="Script" path="res://scripts/arm.gd" id="2_sq6mw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pqu1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b2b5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi23k"]
+size = Vector2(58, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tht2w"]
+size = Vector2(466, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1d0g"]
+size = Vector2(578, 20)
+
+[node name="Scene" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(570, 612)
+scale = Vector2(1.84082, 1)
+physics_material_override = SubResource("PhysicsMaterial_pqu1g")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+scale = Vector2(4.58877, 0.146794)
+texture = ExtResource("1_lgvta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+scale = Vector2(29.28, 1)
+shape = SubResource("RectangleShape2D_3b2b5")
+disabled = true
+
+[node name="Object" type="RigidBody2D" parent="."]
+position = Vector2(847, 470)
+mass = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+shape = SubResource("RectangleShape2D_pi23k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Object"]
+scale = Vector2(0.484375, 0.484375)
+texture = ExtResource("1_lgvta")
+
+[node name="Scale" type="Node2D" parent="."]
+position = Vector2(0, 73)
+
+[node name="Arm" type="Node2D" parent="Scale"]
+
+[node name="Arm Pivot" type="PinJoint2D" parent="Scale/Arm"]
+position = Vector2(576, 140)
+node_a = NodePath("../Static")
+node_b = NodePath("../Arm")
+
+[node name="Static" type="StaticBody2D" parent="Scale/Arm"]
+position = Vector2(576, 187)
+scale = Vector2(0.191655, 0.191655)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Static"]
+visible = false
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("1_lgvta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Static"]
+scale = Vector2(0.0873313, -2.00027)
+shape = SubResource("RectangleShape2D_tht2w")
+disabled = true
+
+[node name="Arm" type="RigidBody2D" parent="Scale/Arm"]
+position = Vector2(575, 166)
+script = ExtResource("2_sq6mw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm"]
+scale = Vector2(4.56404, 0.122629)
+texture = ExtResource("1_lgvta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm"]
+shape = SubResource("RectangleShape2D_d1d0g")
+
+[node name="Left" type="Node2D" parent="Scale/Arm/Arm"]
+
+[node name="LeftPivot" type="StaticBody2D" parent="Scale/Arm/Arm/Left"]
+position = Vector2(-299, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm/Left/LeftPivot"]
+scale = Vector2(0.0873313, -2.00027)
+shape = SubResource("RectangleShape2D_tht2w")
+disabled = true
+
+[node name="Left Joint" type="PinJoint2D" parent="Scale/Arm/Arm/Left"]
+position = Vector2(-299, 4)
+node_a = NodePath("../LeftPivot")
+node_b = NodePath("../RigidBody2D2")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Scale/Arm/Arm/Left"]
+position = Vector2(-300, 304)
+mass = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm/Left/RigidBody2D2"]
+scale = Vector2(3.64908, 0.160649)
+texture = ExtResource("1_lgvta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm/Left/RigidBody2D2"]
+shape = SubResource("RectangleShape2D_tht2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm/Left"]
+visible = false
+position = Vector2(-299, 4)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("1_lgvta")
+
+[node name="Right" type="Node2D" parent="Scale/Arm/Arm"]
+position = Vector2(587, 0)
+
+[node name="LeftPivot" type="StaticBody2D" parent="Scale/Arm/Arm/Right"]
+position = Vector2(-299, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm/Right/LeftPivot"]
+scale = Vector2(0.0873313, -2.00027)
+shape = SubResource("RectangleShape2D_tht2w")
+disabled = true
+
+[node name="Left Joint" type="PinJoint2D" parent="Scale/Arm/Arm/Right"]
+position = Vector2(-299, 4)
+node_a = NodePath("../LeftPivot")
+node_b = NodePath("../RigidBody2D2")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Scale/Arm/Arm/Right"]
+position = Vector2(-300, 304)
+mass = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm/Right/RigidBody2D2"]
+scale = Vector2(3.64908, 0.160649)
+texture = ExtResource("1_lgvta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm/Right/RigidBody2D2"]
+shape = SubResource("RectangleShape2D_tht2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm/Right"]
+visible = false
+position = Vector2(-299, 4)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("1_lgvta")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 323)

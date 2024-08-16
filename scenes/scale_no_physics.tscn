@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfvt2halb0gvi"]
+
+[ext_resource type="Script" path="res://scripts/scale_no_physics.gd" id="1_1ugf7"]
+[ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_c2etf"]
+[ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="3_tcidc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h73cy"]
+size = Vector2(46, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_too0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfsgr"]
+size = Vector2(58, 58)
+
+[node name="Scale" type="Node2D"]
+script = ExtResource("1_1ugf7")
+
+[node name="Left Platform" type="Node2D" parent="."]
+position = Vector2(313, 407)
+scale = Vector2(7, 0.366)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Left Platform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Platform/StaticBody2D"]
+shape = SubResource("RectangleShape2D_h73cy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Left Platform"]
+scale = Vector2(0.359375, 0.359375)
+texture = ExtResource("1_c2etf")
+
+[node name="LeftArea" type="Area2D" parent="Left Platform"]
+unique_name_in_owner = true
+position = Vector2(-0.285714, -355.191)
+scale = Vector2(2.67979, -32.2365)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Platform/LeftArea"]
+shape = SubResource("RectangleShape2D_too0b")
+
+[node name="Object" type="RigidBody2D" parent="."]
+position = Vector2(234, 215)
+mass = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+shape = SubResource("RectangleShape2D_vfsgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Object"]
+scale = Vector2(0.484375, 0.484375)
+texture = ExtResource("1_c2etf")
+
+[node name="MouseControllable" type="Node" parent="Object"]
+script = ExtResource("3_tcidc")
+
+[node name="Object2" type="RigidBody2D" parent="."]
+position = Vector2(349, 110)
+mass = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object2"]
+shape = SubResource("RectangleShape2D_vfsgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Object2"]
+scale = Vector2(0.484375, 0.484375)
+texture = ExtResource("1_c2etf")
+
+[connection signal="body_entered" from="Left Platform/LeftArea" to="." method="_on_left_area_body_entered"]
+[connection signal="body_exited" from="Left Platform/LeftArea" to="." method="_on_left_area_body_exited"]
