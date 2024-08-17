@@ -9,7 +9,7 @@ func _ready() -> void:
 	line = await resource.get_next_dialogue_line("start")
 	new_line()
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_action_just_released(&"diag_continue"):
 		if not typing:
 			line = await resource.get_next_dialogue_line(line.next_id)
