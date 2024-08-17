@@ -1,7 +1,7 @@
 ~ start
 
 You: Huh? Where- wh-
-do Global.focus
+do Global.focus()
 do Global.show_sprite("anubis")
 You: What’s that dog thing??
 ???: DOG THING?? Paltry child, I am The Canine Who Swallows Millions, Lord of Sacred Lands, The Royal Decay, Master of-
@@ -11,7 +11,7 @@ You: That’s a long name.
 You: Like the Egyptian Pharaoh?
 Anubis: Pft, curses on Abraham for his confounding.
 Anubis: I am no Pharaoh! But it matters not little one. Behold.
-do Global.show_scales
+do Global.show_scales()
 You: What is this?
 Anubis: This is the Scale of Justice. To measure these wretched souls.
 You: Like with the Feather or something?
@@ -19,7 +19,7 @@ Anubis: Wise you are. Yes and No.
 	Ma’at is on vacation. You will take his place.
 You: What?!?
 Anubis: Here, use the junk in this trunk to balance the Scale.
-do Global.show_inventory
+do Global.show_inventory()
 Anubis: I will take my leave now.
 You: Wait, what? Hold o-
 Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.

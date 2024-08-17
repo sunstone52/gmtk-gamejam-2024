@@ -1,12 +1,14 @@
 extends Node
 
+var scales = preload("res://scenes/scale.tscn")
+
 # Dialog functions
 func focus() -> void:
-	print("focus")
 	pass
 
 func show_scales() -> void:
-	pass
+	var instance = scales.instantiate()
+	add_child(instance)
 
 func show_inventory() -> void:
 	pass
