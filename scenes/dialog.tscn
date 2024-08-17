@@ -54,10 +54,14 @@ anchor_bottom = 0.5
 offset_left = -364.0
 offset_top = -28.0
 offset_right = 316.0
-offset_bottom = 28.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 19
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 script = ExtResource("2_3m6lp")
+seconds_per_step = 0.03
+pause_at_characters = ".?!-"
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+
+[connection signal="finished_typing" from="w/Text" to="." method="_on_text_finished_typing"]
