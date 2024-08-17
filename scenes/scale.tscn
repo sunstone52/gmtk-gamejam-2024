@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=11 format=3 uid="uid://cebi66gxphkvp"]
 
+[ext_resource type="Script" path="res://scripts/controller.gd" id="1_hc0t8"]
 [ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="2_3qrog"]
 [ext_resource type="Script" path="res://scripts/arm.gd" id="2_sq6mw"]
@@ -20,6 +21,7 @@ size = Vector2(392, 20)
 size = Vector2(290, 404)
 
 [node name="Scene" type="Node2D"]
+script = ExtResource("1_hc0t8")
 
 [node name="Node2D" type="Node2D" parent="."]
 
