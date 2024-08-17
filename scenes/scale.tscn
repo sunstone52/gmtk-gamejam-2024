@@ -191,6 +191,7 @@ unique_name_in_owner = true
 position = Vector2(802, -51)
 
 [node name="Offscreen" type="Node2D" parent="."]
+visible = false
 
 [node name="Burdens" type="Node2D" parent="Offscreen"]
 unique_name_in_owner = true
