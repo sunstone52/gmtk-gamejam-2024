@@ -9,10 +9,11 @@ var parentRigid: RigidBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	parent = get_parent() as PhysicsBody2D
-	parentCharacter = parent as CharacterBody2D
-	parentRigid = parent as RigidBody2D
-	parent.input_pickable = true
-	parent.input_event.connect(_input_event)
+	if (parent):
+		parentCharacter = parent as CharacterBody2D
+		parentRigid = parent as RigidBody2D
+		parent.input_pickable = true
+		parent.input_event.connect(_input_event)
 	set_process_input(false)
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
