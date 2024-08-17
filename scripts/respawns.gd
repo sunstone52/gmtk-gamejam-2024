@@ -9,4 +9,4 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if parent:
 		if parent.position.y > floor:
-			%Controller.place_object_in_scene(parent)
+			$/root/Scene/Controller.place_object_in_scene(parent)

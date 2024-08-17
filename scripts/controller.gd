@@ -7,14 +7,19 @@ var scene: Node
 func _ready() -> void:
 	scene = get_parent()
 
+func add_script(node: Node, scriptNode: Node):
+	var scriptCopy = scriptNode.duplicate()
+	scriptCopy.owner = owner
+	node.add_child(scriptCopy)
+
 func launch_random_burden() -> void:
 	var count = %Burdens.get_child_count()
 	var idx = rng.randi_range(0, count - 1)
 	var toLaunch = %Burdens.get_child(idx)
 	print("Launching: ", toLaunch.name)
 	var duplicated = toLaunch.duplicate()
-	duplicated.add_child(%MouseControllable.duplicate())
-	duplicated.add_child(%Respawns.duplicate())
+	add_script(duplicated, %MouseControllable)
+	add_script(duplicated, %Respawns)
 	place_object_in_scene(duplicated)
 
 func place_object_in_scene(object: Node2D) -> void:

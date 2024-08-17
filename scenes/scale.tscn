@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=13 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/controller.gd" id="1_hc0t8"]
 [ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
@@ -7,9 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="6_3ntnr"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="6_dkxok"]
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="6_gxnec"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi23k"]
-size = Vector2(58, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tht2w"]
 size = Vector2(320, 20)
@@ -33,38 +30,6 @@ autostart = true
 script = ExtResource("6_dkxok")
 
 [node name="Node2D" type="Node2D" parent="."]
-
-[node name="Object2" type="RigidBody2D" parent="."]
-position = Vector2(400, 420)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Object2"]
-shape = SubResource("RectangleShape2D_pi23k")
-
-[node name="Sprite2D" type="Sprite2D" parent="Object2"]
-scale = Vector2(0.484375, 0.484375)
-texture = ExtResource("1_lgvta")
-
-[node name="MouseControllable" type="Node" parent="Object2"]
-script = ExtResource("2_3qrog")
-
-[node name="Respawns" type="Node" parent="Object2"]
-script = ExtResource("6_gxnec")
-
-[node name="Object" type="RigidBody2D" parent="."]
-position = Vector2(768, 410)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
-shape = SubResource("RectangleShape2D_pi23k")
-
-[node name="Sprite2D" type="Sprite2D" parent="Object"]
-scale = Vector2(0.484375, 0.484375)
-texture = ExtResource("1_lgvta")
-
-[node name="MouseControllable" type="Node" parent="Object"]
-script = ExtResource("2_3qrog")
-
-[node name="Respawns" type="Node" parent="Object"]
-script = ExtResource("6_gxnec")
 
 [node name="Scale" type="Node2D" parent="."]
 position = Vector2(600, 266)
@@ -223,5 +188,4 @@ unique_name_in_owner = true
 script = ExtResource("6_gxnec")
 
 [node name="Controller" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("1_hc0t8")
