@@ -1,8 +1,7 @@
 extends Node2D
 
-var offscreen = find_child("Offscreen")
-var enemy = offscreen.find_child("Enemy")
-var marble = offscreen.find_child("Marble")
+@onready var enemy = $Offscreen/Burdens/Enemy
+@onready var marble = $Offscreen/Burdens/Marble
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

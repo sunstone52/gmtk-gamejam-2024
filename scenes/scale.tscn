@@ -206,6 +206,16 @@ texture = ExtResource("6_3ntnr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Marble"]
 shape = SubResource("CircleShape2D_75dwd")
 
+[node name="Enemy" type="RigidBody2D" parent="Offscreen/Burdens"]
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Enemy"]
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("6_3ntnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Enemy"]
+shape = SubResource("CircleShape2D_75dwd")
+
 [node name="Scripts" type="Node" parent="Offscreen"]
 
 [node name="MouseControllable" type="Node" parent="Offscreen/Scripts"]
