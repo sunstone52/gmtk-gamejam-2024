@@ -21,6 +21,7 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 			grabbed = true
 			if parentRigid:
 				parentRigid.freeze = true
+				parentRigid.set_collision_layer_value(0b0001, false)
 			if parentCharacter:
 				parentCharacter.set_physics_process(false)
 			grabbed = true
@@ -32,6 +33,7 @@ func _input(event: InputEvent):
 			if (event.is_released()):
 				if parentRigid:
 					parentRigid.freeze = false
+					parentRigid.set_collision_layer_value(0b0001, true)
 				if parentCharacter:
 					parentCharacter.set_physics_process(true)
 				grabbed = false
