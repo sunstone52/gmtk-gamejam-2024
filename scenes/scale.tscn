@@ -8,17 +8,17 @@
 size = Vector2(58, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tht2w"]
-size = Vector2(466, 20)
+size = Vector2(320, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1d0g"]
-size = Vector2(578, 20)
+size = Vector2(392, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n6q87"]
 
 [node name="Scene" type="Node2D"]
 
 [node name="Object2" type="RigidBody2D" parent="."]
-position = Vector2(300, 470)
+position = Vector2(400, 420)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object2"]
 shape = SubResource("RectangleShape2D_pi23k")
@@ -31,7 +31,7 @@ texture = ExtResource("1_lgvta")
 script = ExtResource("2_3qrog")
 
 [node name="Object" type="RigidBody2D" parent="."]
-position = Vector2(900, 470)
+position = Vector2(800, 420)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
 shape = SubResource("RectangleShape2D_pi23k")
@@ -44,7 +44,7 @@ texture = ExtResource("1_lgvta")
 script = ExtResource("2_3qrog")
 
 [node name="Scale" type="Node2D" parent="."]
-position = Vector2(600, 223)
+position = Vector2(600, 266)
 
 [node name="Arm" type="Node2D" parent="Scale"]
 
@@ -65,26 +65,26 @@ collision_mask = 0
 script = ExtResource("2_sq6mw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm"]
-scale = Vector2(4.56404, 0.122629)
+scale = Vector2(3, 0.123)
 texture = ExtResource("1_lgvta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm"]
 shape = SubResource("RectangleShape2D_d1d0g")
 
 [node name="Right" type="Node2D" parent="Scale"]
-position = Vector2(293, -2)
+position = Vector2(192, 0)
 
 [node name="Joint" type="PinJoint2D" parent="Scale/Right"]
 node_a = NodePath("../../Arm/Arm")
 node_b = NodePath("../Plate")
 
 [node name="Plate" type="RigidBody2D" parent="Scale/Right"]
-position = Vector2(0, 304)
+position = Vector2(0, 250)
 mass = 4.0
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Scale/Right/Plate"]
-scale = Vector2(3.64908, 0.160649)
+scale = Vector2(2.5, 0.161)
 texture = ExtResource("1_lgvta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Plate"]
@@ -108,19 +108,19 @@ shape = SubResource("CircleShape2D_n6q87")
 disabled = true
 
 [node name="Left" type="Node2D" parent="Scale"]
-position = Vector2(-300, 0)
+position = Vector2(-192, 0)
 
 [node name="Joint" type="PinJoint2D" parent="Scale/Left"]
 node_a = NodePath("../../Arm/Arm")
 node_b = NodePath("../Plate")
 
 [node name="Plate" type="RigidBody2D" parent="Scale/Left"]
-position = Vector2(0, 300)
+position = Vector2(0, 250)
 mass = 4.0
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Scale/Left/Plate"]
-scale = Vector2(3.64908, 0.160649)
+scale = Vector2(2.5, 0.161)
 texture = ExtResource("1_lgvta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Plate"]
