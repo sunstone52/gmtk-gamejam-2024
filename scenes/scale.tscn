@@ -26,7 +26,6 @@ size = Vector2(290, 404)
 radius = 15.0
 
 [node name="Scene" type="Node2D"]
-script = ExtResource("1_hc0t8")
 
 [node name="BurdenTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -222,3 +221,7 @@ script = ExtResource("2_3qrog")
 [node name="Respawns" type="Node" parent="Offscreen/Scripts"]
 unique_name_in_owner = true
 script = ExtResource("6_gxnec")
+
+[node name="Controller" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_hc0t8")

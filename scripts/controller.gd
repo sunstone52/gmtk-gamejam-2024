@@ -1,16 +1,12 @@
-extends Node2D
+extends Node
 
 var rng = RandomNumberGenerator.new()
+var scene: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	scene = get_parent()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func launch_random_burden() -> void:
 	var count = %Burdens.get_child_count()
 	var idx = rng.randi_range(0, count - 1)
@@ -28,10 +24,10 @@ func place_object_in_scene(object: Node2D) -> void:
 	else:
 		pos = %RespawnPoint2.position
 	
-	if object.get_parent() != self:
+	if object.get_parent() != scene:
 		if object.get_parent():
 			object.get_parent().remove_child(object)
-		add_child(object)
+		scene.add_child(object)
 		object.position = pos
 	
 	var rigidObject = object as RigidBody2D
