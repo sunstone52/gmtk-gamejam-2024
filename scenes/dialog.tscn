@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ssfwuy2blt4l"]
 
-[ext_resource type="Script" path="res://scenes/dialog.gd" id="1_f3t5c"]
+[ext_resource type="Script" path="res://scripts/dialog.gd" id="1_f3t5c"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_3m6lp"]
 [ext_resource type="Texture2D" uid="uid://deve8kursx3nx" path="res://assets/sprites/anubis_placeholder.png" id="3_i4b66"]
 
