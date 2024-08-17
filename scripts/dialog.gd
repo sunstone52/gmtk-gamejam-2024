@@ -13,7 +13,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released(&"diag_continue"):
 		if not typing:
 			line = await resource.get_next_dialogue_line(line.next_id)
-			new_line()
+			if line:
+				new_line()
+			else:
+				# end dialog
+				$".".queue_free()
 		else:
 			%Text.skip_typing()
 			typing = false
