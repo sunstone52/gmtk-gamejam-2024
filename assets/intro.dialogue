@@ -1,40 +1,39 @@
 ~ start
 
-Player: Huh? Where- wh-
+You: Huh? Where- wh-
 do Global.focus
 do Global.show_sprite("anubis")
-Player: What’s that dog thing??
-Anubis: DOG THING?? Paltry child, I am The Canine Who Swallows Millions, Lord of Sacred Lands, The Royal Decay, Master of-
-Player: That’s a long name.
-Anubis: ...Bold human.
-Anubis: ...My name is Anubis.
-Player: Like the Egyptian Pharaoh?
+You: What’s that dog thing??
+???: DOG THING?? Paltry child, I am The Canine Who Swallows Millions, Lord of Sacred Lands, The Royal Decay, Master of-
+You: That’s a long name.
+???: ...Bold human.
+???: ...My name is Anubis.
+You: Like the Egyptian Pharaoh?
 Anubis: Pft, curses on Abraham for his confounding.
 Anubis: I am no Pharaoh! But it matters not little one. Behold.
 do Global.show_scales
-Player: What is this?
-Anubis: The Scale of Justice. To measure these wretched souls.
-Player: Like with the Feather or something?
+You: What is this?
+Anubis: This is the Scale of Justice. To measure these wretched souls.
+You: Like with the Feather or something?
 Anubis: Wise you are. Yes and No.
 	Ma’at is on vacation. You will take his place.
-Player: What?!?
+You: What?!?
 Anubis: Here, use the junk in this trunk to balance the Scale.
 do Global.show_inventory
 Anubis: I will take my leave now.
-Player: Wait, what? Hold o-
+You: Wait, what? Hold o-
 Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
 do Global.hide_sprite()
-Player: Hold on-
+You: Hold on-
 Anubis: It appears a trial run is in order.
 do Global.show_sprite("npc2")
-M: Hello ...
+M: Greetings.
 Anubis: Backed the wrong horse. Still a saintly woman tho.
 Anubis: Make not mistakes- now observe.
 do Global.place_feather
 Anubis: Balanced. She may pass.
 M: Thank you, dearie.
-Player: I don’t have proper training for this.
-	Or the right certificates.
+You: I don’t even have proper training for this...
 do Global.play_sound("leaving")
 
 => END

@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 			typing = false
 
 func new_line() -> void:
+	%Speaker.text = line.character
 	%Text.dialogue_line = line
 	%Text.type_out()
 	typing = true

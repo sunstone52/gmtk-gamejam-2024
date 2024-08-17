@@ -19,7 +19,7 @@ position = Vector2(1016, 487)
 scale = Vector2(0.712625, 0.712625)
 texture = ExtResource("3_i4b66")
 
-[node name="w" type="Control" parent="."]
+[node name="DialogBox" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 640.0
@@ -28,7 +28,7 @@ offset_right = 680.0
 offset_bottom = 600.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="w"]
+[node name="Panel" type="Panel" parent="DialogBox"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,12 +38,22 @@ anchor_bottom = 0.5
 offset_left = -396.0
 offset_top = -52.0
 offset_right = 356.0
-offset_bottom = 52.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_762y4")
 
-[node name="Text" type="RichTextLabel" parent="w"]
+[node name="Speaker" type="Label" parent="DialogBox"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -344.0
+offset_top = -16.0
+offset_right = -304.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 19
+text = "You"
+
+[node name="Text" type="RichTextLabel" parent="DialogBox"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -52,9 +62,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -364.0
-offset_top = -28.0
+offset_top = -4.0
 offset_right = 316.0
-offset_bottom = 36.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 19
@@ -64,4 +74,4 @@ seconds_per_step = 0.03
 pause_at_characters = ".?!-"
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 
-[connection signal="finished_typing" from="w/Text" to="." method="_on_text_finished_typing"]
+[connection signal="finished_typing" from="DialogBox/Text" to="." method="_on_text_finished_typing"]
