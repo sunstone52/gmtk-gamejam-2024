@@ -1,0 +1,42 @@
+~ start
+
+Player: Huh? Where- wh-
+do Global.focus
+do Global.show_sprite("anubis")
+Player: What’s that dog thing??
+Anubis: DOG THING?? Paltry child, I am The Canine Who Swallows Millions, Lord of Sacred Lands, The Royal Decay, Master of-
+Player: That’s a long name
+Anubis: ...Bold human
+Anubis: ...Anubis
+Player: Like the Egyptian Pharaoh?
+Anubis: Pft, curses on Abraham for his confounding.
+	I am no Pharaoh!
+	It matters not little one. Behold
+do Global.show_scales
+Player: What is this?
+Anubis: The Scale of Justice. To measure these wretched souls.
+Player: Like with the Feather or something?
+Anubis: Wise you are. Yes and No.
+	Ma’at is on vacation. You will take his place.
+Player: What?!?
+Anubis: Here, use the junk in this trunk to balance the Scale
+do Global.show_inventory
+Anubis: I’m also leaving.
+Player: Wait, what? Slow dow-
+Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
+do Global.hide_sprite("anubis")
+Player: Hold on-
+Anubis: It appears a trial run is in order.
+do Global.show_sprite("npc2")
+M: Hello ...
+Anubis: Backed the wrong horse. Still a saintly woman tho
+Anubis: Make not mistakes- now observe.
+do Global.place_feather
+Anubis: Balanced. She may pass
+M: Thank you, dearie
+Player: I don’t have proper training for this.
+	Or the right certificates.
+	[Footsteps/door slam or other leaving sound]
+	Core game loop starts
+
+=> END
