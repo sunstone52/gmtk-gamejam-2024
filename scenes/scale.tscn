@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=10 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="2_3qrog"]
@@ -15,6 +15,9 @@ size = Vector2(320, 20)
 size = Vector2(392, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n6q87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfp55"]
+size = Vector2(290, 404)
 
 [node name="Scene" type="Node2D"]
 
@@ -112,6 +115,12 @@ position = Vector2(0, -100)
 shape = SubResource("CircleShape2D_n6q87")
 disabled = true
 
+[node name="Area2D2" type="Area2D" parent="Scale/Right"]
+position = Vector2(-3, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Area2D2"]
+shape = SubResource("RectangleShape2D_cfp55")
+
 [node name="Left" type="Node2D" parent="Scale"]
 position = Vector2(-192, 0)
 
@@ -147,6 +156,12 @@ position = Vector2(0, -100)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Spring/Base"]
 shape = SubResource("CircleShape2D_n6q87")
 disabled = true
+
+[node name="Area2D" type="Area2D" parent="Scale/Left"]
+position = Vector2(1, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Area2D"]
+shape = SubResource("RectangleShape2D_cfp55")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 323)

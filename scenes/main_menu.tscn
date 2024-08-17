@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtc3lqfj7qp17"]
+
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="1_gukbc"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 496.0
+offset_top = 448.0
+offset_right = 656.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start Game"
+script = ExtResource("1_gukbc")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
