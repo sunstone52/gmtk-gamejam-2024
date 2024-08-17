@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=9 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="2_3qrog"]
 [ext_resource type="Script" path="res://scripts/arm.gd" id="2_sq6mw"]
+[ext_resource type="Script" path="res://scripts/object.gd" id="3_2xdm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi23k"]
 size = Vector2(58, 58)
@@ -17,8 +18,11 @@ size = Vector2(392, 20)
 
 [node name="Scene" type="Node2D"]
 
+[node name="Node2D" type="Node2D" parent="."]
+
 [node name="Object2" type="RigidBody2D" parent="."]
 position = Vector2(400, 420)
+script = ExtResource("3_2xdm7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object2"]
 shape = SubResource("RectangleShape2D_pi23k")
@@ -31,7 +35,8 @@ texture = ExtResource("1_lgvta")
 script = ExtResource("2_3qrog")
 
 [node name="Object" type="RigidBody2D" parent="."]
-position = Vector2(800, 420)
+position = Vector2(768, 410)
+script = ExtResource("3_2xdm7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
 shape = SubResource("RectangleShape2D_pi23k")
@@ -145,3 +150,11 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 323)
+
+[node name="RespawnPoint1" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(409, -51)
+
+[node name="RespawnPoint2" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(802, -51)
