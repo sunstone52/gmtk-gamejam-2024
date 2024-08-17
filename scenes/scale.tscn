@@ -14,10 +14,10 @@ size = Vector2(320, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1d0g"]
 size = Vector2(392, 20)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n6q87"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfp55"]
 size = Vector2(290, 404)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6q87"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_75dwd"]
 radius = 15.0
@@ -78,6 +78,12 @@ texture = ExtResource("1_lgvta")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Plate"]
 shape = SubResource("RectangleShape2D_tht2w")
 
+[node name="Area2D2" type="Area2D" parent="Scale/Right/Plate"]
+position = Vector2(-3, -220)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Plate/Area2D2"]
+shape = SubResource("RectangleShape2D_cfp55")
+
 [node name="Spring" type="Node2D" parent="Scale/Right"]
 
 [node name="Joint" type="DampedSpringJoint2D" parent="Scale/Right/Spring"]
@@ -94,12 +100,6 @@ position = Vector2(0, -100)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Spring/Base"]
 shape = SubResource("CircleShape2D_n6q87")
 disabled = true
-
-[node name="Area2D2" type="Area2D" parent="Scale/Right"]
-position = Vector2(-3, 30)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Area2D2"]
-shape = SubResource("RectangleShape2D_cfp55")
 
 [node name="Left" type="Node2D" parent="Scale"]
 position = Vector2(-192, 0)
@@ -120,6 +120,12 @@ texture = ExtResource("1_lgvta")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Plate"]
 shape = SubResource("RectangleShape2D_tht2w")
 
+[node name="Area2D" type="Area2D" parent="Scale/Left/Plate"]
+position = Vector2(1, -220)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Plate/Area2D"]
+shape = SubResource("RectangleShape2D_cfp55")
+
 [node name="Spring" type="Node2D" parent="Scale/Left"]
 
 [node name="Joint" type="DampedSpringJoint2D" parent="Scale/Left/Spring"]
@@ -136,12 +142,6 @@ position = Vector2(0, -100)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Spring/Base"]
 shape = SubResource("CircleShape2D_n6q87")
 disabled = true
-
-[node name="Area2D" type="Area2D" parent="Scale/Left"]
-position = Vector2(1, 30)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Area2D"]
-shape = SubResource("RectangleShape2D_cfp55")
 
 [node name="RespawnPoint1" type="Node2D" parent="."]
 unique_name_in_owner = true
