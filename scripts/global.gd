@@ -13,13 +13,13 @@ func show_scales() -> void:
 func show_inventory() -> void:
 	pass
 
-func show_sprite(sprite: String) -> void:
+func show_sprite(_sprite: String) -> void:
 	pass
 
 func hide_sprite() -> void:
 	pass
 
-func play_sound(sound: String) -> void:
+func play_sound(_sound: String) -> void:
 	pass
 
 func place_feather() -> void:

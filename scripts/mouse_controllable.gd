@@ -16,7 +16,7 @@ func _ready() -> void:
 		parent.input_event.connect(_input_event)
 	set_process_input(false)
 
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if (event is InputEventMouseButton):
 		if (event.is_pressed()):
 			grabbed = true
