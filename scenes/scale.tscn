@@ -1,9 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=13 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_hc0t8"]
-[ext_resource type="Script" path="res://scripts/arm.gd" id="2_sq6mw"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="2_3qrog"]
-[ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
 [ext_resource type="Texture2D" uid="uid://bcpqw1rbfe5wu" path="res://assets/sprites/Arm.svg" id="3_mvdkf"]
 [ext_resource type="Texture2D" uid="uid://cow6te5r6u522" path="res://assets/sprites/Plate.svg" id="4_lcbbv"]
 [ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="6_3ntnr"]
