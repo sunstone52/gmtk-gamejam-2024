@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=12 format=3 uid="uid://cebi66gxphkvp"]
 
-[ext_resource type="Script" path="res://scripts/controller.gd" id="1_hc0t8"]
+[ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_hc0t8"]
 [ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="2_3qrog"]
-[ext_resource type="Script" path="res://scripts/arm.gd" id="2_sq6mw"]
 [ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="6_3ntnr"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="6_dkxok"]
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="6_gxnec"]
@@ -50,7 +49,6 @@ disabled = true
 [node name="Arm" type="RigidBody2D" parent="Scale/Arm"]
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("2_sq6mw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm"]
 scale = Vector2(3, 0.123)
@@ -78,10 +76,11 @@ texture = ExtResource("1_lgvta")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Plate"]
 shape = SubResource("RectangleShape2D_tht2w")
 
-[node name="Area2D2" type="Area2D" parent="Scale/Right/Plate"]
+[node name="RightArea" type="Area2D" parent="Scale/Right/Plate"]
+unique_name_in_owner = true
 position = Vector2(-3, -220)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Plate/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Plate/RightArea"]
 shape = SubResource("RectangleShape2D_cfp55")
 
 [node name="Spring" type="Node2D" parent="Scale/Right"]
@@ -120,10 +119,11 @@ texture = ExtResource("1_lgvta")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Plate"]
 shape = SubResource("RectangleShape2D_tht2w")
 
-[node name="Area2D" type="Area2D" parent="Scale/Left/Plate"]
+[node name="LeftArea" type="Area2D" parent="Scale/Left/Plate"]
+unique_name_in_owner = true
 position = Vector2(1, -220)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Plate/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Plate/LeftArea"]
 shape = SubResource("RectangleShape2D_cfp55")
 
 [node name="Spring" type="Node2D" parent="Scale/Left"]
@@ -187,5 +187,7 @@ script = ExtResource("2_3qrog")
 unique_name_in_owner = true
 script = ExtResource("6_gxnec")
 
-[node name="Controller" type="Node" parent="."]
+[node name="Controllers" type="Node" parent="."]
+
+[node name="ObjectController" type="Node" parent="Controllers"]
 script = ExtResource("1_hc0t8")
