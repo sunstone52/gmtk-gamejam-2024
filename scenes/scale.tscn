@@ -1,128 +1,69 @@
-[gd_scene load_steps=24 format=3 uid="uid://cebi66gxphkvp"]
+[gd_scene load_steps=7 format=3 uid="uid://dlfwq8d4t1fgo"]
 
-[ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_hc0t8"]
-[ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="2_3qrog"]
-[ext_resource type="AudioStream" uid="uid://bskdyg8ocq6cq" path="res://assets/sounds/impactGeneric_light_000.ogg" id="3_fjtha"]
-[ext_resource type="Texture2D" uid="uid://dva3xxkavubfe" path="res://assets/sprites/Plate2.png" id="3_gwska"]
-[ext_resource type="Texture2D" uid="uid://bcpqw1rbfe5wu" path="res://assets/sprites/Arm.svg" id="3_mvdkf"]
-[ext_resource type="Script" path="res://scripts/sound_controller.gd" id="3_p455s"]
-[ext_resource type="AudioStream" uid="uid://bi5hnspi8te22" path="res://assets/sounds/impactGeneric_light_001.ogg" id="4_vxc0n"]
-[ext_resource type="Texture2D" uid="uid://7efl5il8nte8" path="res://assets/sprites/coin.png" id="5_ixlsp"]
-[ext_resource type="AudioStream" uid="uid://claf7g53b0fjl" path="res://assets/sounds/impactGeneric_light_002.ogg" id="5_khtcf"]
-[ext_resource type="Texture2D" uid="uid://g7o80c4vf6lm" path="res://assets/sprites/cat.png" id="6_1xhga"]
-[ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="6_3ntnr"]
-[ext_resource type="Script" path="res://scripts/burden_timer.gd" id="6_dkxok"]
-[ext_resource type="Script" path="res://scripts/respawns.gd" id="6_gxnec"]
-[ext_resource type="AudioStream" uid="uid://va8m81q5rbia" path="res://assets/sounds/impactGeneric_light_003.ogg" id="6_us21o"]
+[ext_resource type="Texture2D" uid="uid://bcpqw1rbfe5wu" path="res://assets/sprites/Arm.svg" id="1_f3ynw"]
+[ext_resource type="Texture2D" uid="uid://dva3xxkavubfe" path="res://assets/sprites/Plate2.png" id="2_b8g2o"]
 [ext_resource type="Script" path="res://scripts/plate_controller.gd" id="7_g0sej"]
-[ext_resource type="AudioStream" uid="uid://bxdw1sjhorupp" path="res://assets/sounds/impactGeneric_light_004.ogg" id="7_sslo3"]
-[ext_resource type="Script" path="res://scripts/marble.gd" id="11_6akkn"]
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
-streams_count = 5
-stream_0/stream = ExtResource("3_fjtha")
-stream_1/stream = ExtResource("4_vxc0n")
-stream_2/stream = ExtResource("5_khtcf")
-stream_3/stream = ExtResource("6_us21o")
-stream_4/stream = ExtResource("7_sslo3")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tht2w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8hrv"]
 size = Vector2(320, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1d0g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfvfr"]
 size = Vector2(392, 20)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n6q87"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_of4j1"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_75dwd"]
-radius = 15.0
+[node name="Scale" type="Node2D"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7qbqu"]
-radius = 8.0
-
-[node name="Scene" type="Node2D"]
-position = Vector2(72, 0)
-
-[node name="Controllers" type="Node" parent="."]
-
-[node name="ObjectController" type="Node" parent="Controllers"]
-script = ExtResource("1_hc0t8")
-
-[node name="PlateController" type="Node" parent="Controllers"]
-script = ExtResource("7_g0sej")
-
-[node name="Label" type="Label" parent="Controllers/PlateController"]
-offset_left = 632.0
-offset_top = 104.0
-offset_right = 672.0
-offset_bottom = 127.0
-text = "0.0"
-
-[node name="SoundController" type="Node" parent="Controllers"]
-unique_name_in_owner = true
-script = ExtResource("3_p455s")
-
-[node name="ImpactSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
-unique_name_in_owner = true
-stream = SubResource("AudioStreamRandomizer_nysj8")
-
-[node name="BurdenTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-script = ExtResource("6_dkxok")
-
-[node name="Scale" type="Node2D" parent="."]
+[node name="Arm" type="Node2D" parent="."]
 position = Vector2(600, 266)
 
-[node name="Arm" type="Node2D" parent="Scale"]
-
-[node name="Arm Pivot" type="PinJoint2D" parent="Scale/Arm"]
+[node name="Arm Pivot" type="PinJoint2D" parent="Arm"]
 position = Vector2(0, -100)
 node_a = NodePath("../Static")
 node_b = NodePath("../Arm")
 
-[node name="Static" type="StaticBody2D" parent="Scale/Arm"]
+[node name="Static" type="StaticBody2D" parent="Arm"]
 position = Vector2(0, -100)
 scale = Vector2(0.191655, 0.191655)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Static"]
-shape = SubResource("RectangleShape2D_tht2w")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm/Static"]
+shape = SubResource("RectangleShape2D_p8hrv")
 disabled = true
 
-[node name="Arm" type="RigidBody2D" parent="Scale/Arm"]
+[node name="Arm" type="RigidBody2D" parent="Arm"]
 collision_layer = 2
 collision_mask = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm"]
+[node name="Sprite2D" type="Sprite2D" parent="Arm/Arm"]
 position = Vector2(0, -44.5)
 scale = Vector2(1.51311, 1.11818)
-texture = ExtResource("3_mvdkf")
+texture = ExtResource("1_f3ynw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm"]
-shape = SubResource("RectangleShape2D_d1d0g")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm/Arm"]
+shape = SubResource("RectangleShape2D_pfvfr")
 
-[node name="Left" type="Node2D" parent="Scale"]
-position = Vector2(-192, 0)
+[node name="Left" type="Node2D" parent="."]
+position = Vector2(408, 266)
 
-[node name="Joint" type="PinJoint2D" parent="Scale/Left"]
+[node name="Joint" type="PinJoint2D" parent="Left"]
 node_a = NodePath("../../Arm/Arm")
 node_b = NodePath("../LeftPlate")
 
-[node name="LeftPlate" type="RigidBody2D" parent="Scale/Left"]
+[node name="LeftPlate" type="RigidBody2D" parent="Left"]
 unique_name_in_owner = true
 position = Vector2(0, 250)
 mass = 4.0
 lock_rotation = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Scale/Left/LeftPlate"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftPlate"]
 position = Vector2(0, -123)
 scale = Vector2(1.75, 1.25)
-texture = ExtResource("3_gwska")
+texture = ExtResource("2_b8g2o")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scale/Left/LeftPlate"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Left/LeftPlate"]
 polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, -110, 10)
 
-[node name="LeftLabel" type="Label" parent="Scale/Left/LeftPlate"]
+[node name="LeftLabel" type="Label" parent="Left/LeftPlate"]
 unique_name_in_owner = true
 visible = false
 offset_left = -40.0
@@ -132,9 +73,9 @@ offset_bottom = 51.0
 text = "250.0
 "
 
-[node name="Spring" type="Node2D" parent="Scale/Left"]
+[node name="Spring" type="Node2D" parent="Left"]
 
-[node name="Joint" type="DampedSpringJoint2D" parent="Scale/Left/Spring"]
+[node name="Joint" type="DampedSpringJoint2D" parent="Left/Spring"]
 position = Vector2(0, -100)
 node_a = NodePath("../../LeftPlate")
 node_b = NodePath("../Base")
@@ -142,35 +83,35 @@ length = 100.0
 stiffness = 64.0
 damping = 4.0
 
-[node name="Base" type="StaticBody2D" parent="Scale/Left/Spring"]
+[node name="Base" type="StaticBody2D" parent="Left/Spring"]
 position = Vector2(0, -100)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Spring/Base"]
-shape = SubResource("CircleShape2D_n6q87")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/Spring/Base"]
+shape = SubResource("CircleShape2D_of4j1")
 disabled = true
 
-[node name="Right" type="Node2D" parent="Scale"]
-position = Vector2(192, 0)
+[node name="Right" type="Node2D" parent="."]
+position = Vector2(792, 266)
 
-[node name="Joint" type="PinJoint2D" parent="Scale/Right"]
+[node name="Joint" type="PinJoint2D" parent="Right"]
 node_a = NodePath("../../Arm/Arm")
 node_b = NodePath("../RightPlate")
 
-[node name="RightPlate" type="RigidBody2D" parent="Scale/Right"]
+[node name="RightPlate" type="RigidBody2D" parent="Right"]
 unique_name_in_owner = true
 position = Vector2(0, 250)
 mass = 4.0
 lock_rotation = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Scale/Right/RightPlate"]
+[node name="Sprite2D" type="Sprite2D" parent="Right/RightPlate"]
 position = Vector2(0, -123)
 scale = Vector2(1.75, 1.25)
-texture = ExtResource("3_gwska")
+texture = ExtResource("2_b8g2o")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scale/Right/RightPlate"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Right/RightPlate"]
 polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, -110, 10)
 
-[node name="RightLabel" type="Label" parent="Scale/Right/RightPlate"]
+[node name="RightLabel" type="Label" parent="Right/RightPlate"]
 unique_name_in_owner = true
 visible = false
 offset_left = -40.0
@@ -179,9 +120,9 @@ offset_right = 1.0
 offset_bottom = 51.0
 text = "250.0"
 
-[node name="Spring" type="Node2D" parent="Scale/Right"]
+[node name="Spring" type="Node2D" parent="Right"]
 
-[node name="Joint" type="DampedSpringJoint2D" parent="Scale/Right/Spring"]
+[node name="Joint" type="DampedSpringJoint2D" parent="Right/Spring"]
 position = Vector2(0, -100)
 node_a = NodePath("../../RightPlate")
 node_b = NodePath("../Base")
@@ -189,80 +130,19 @@ length = 100.0
 stiffness = 64.0
 damping = 4.0
 
-[node name="Base" type="StaticBody2D" parent="Scale/Right/Spring"]
+[node name="Base" type="StaticBody2D" parent="Right/Spring"]
 position = Vector2(0, -100)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Spring/Base"]
-shape = SubResource("CircleShape2D_n6q87")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/Spring/Base"]
+shape = SubResource("CircleShape2D_of4j1")
 disabled = true
 
-[node name="RespawnPoint1" type="Node2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(409, -51)
+[node name="PlateController" type="Node" parent="."]
+script = ExtResource("7_g0sej")
 
-[node name="RespawnPoint2" type="Node2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(802, -51)
-
-[node name="Offscreen" type="Node2D" parent="."]
-physics_interpolation_mode = 2
-visible = false
-
-[node name="Burdens" type="Node2D" parent="Offscreen"]
-unique_name_in_owner = true
-
-[node name="Marble" type="RigidBody2D" parent="Offscreen/Burdens"]
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("11_6akkn")
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Marble"]
-scale = Vector2(0.128, 0.128)
-texture = ExtResource("6_3ntnr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Marble"]
-shape = SubResource("CircleShape2D_75dwd")
-
-[node name="Coin" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(-34, -14)
-mass = 0.25
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("11_6akkn")
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Coin"]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("5_ixlsp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Coin"]
-shape = SubResource("CircleShape2D_7qbqu")
-
-[node name="Cat" type="RigidBody2D" parent="Offscreen/Burdens"]
-position = Vector2(40, 15)
-mass = 8.0
-freeze = true
-script = ExtResource("11_6akkn")
-
-[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Cat"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_1xhga")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offscreen/Burdens/Cat"]
-polygon = PackedVector2Array(23, -7, 29, -37, 4, -35, 6, -20, -18, -10, -29, 35, 18, 35, 14, 13)
-
-[node name="Scripts" type="Node" parent="Offscreen"]
-
-[node name="MouseControllable" type="Node" parent="Offscreen/Scripts"]
-unique_name_in_owner = true
-script = ExtResource("2_3qrog")
-
-[node name="Respawns" type="Node" parent="Offscreen/Scripts"]
-unique_name_in_owner = true
-script = ExtResource("6_gxnec")
-
-[connection signal="body_entered" from="Offscreen/Burdens/Marble" to="Offscreen/Burdens/Marble" method="_on_body_entered"]
-[connection signal="impact" from="Offscreen/Burdens/Marble" to="Controllers/SoundController" method="_on_marble_impact"]
-[connection signal="body_entered" from="Offscreen/Burdens/Coin" to="Offscreen/Burdens/Coin" method="_on_body_entered"]
-[connection signal="impact" from="Offscreen/Burdens/Coin" to="Controllers/SoundController" method="_on_coin_impact"]
+[node name="Label" type="Label" parent="PlateController"]
+offset_left = 592.0
+offset_top = 96.0
+offset_right = 632.0
+offset_bottom = 119.0
+text = "0.0"

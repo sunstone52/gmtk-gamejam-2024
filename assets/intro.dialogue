@@ -15,12 +15,12 @@ Anubis: Pft, curse Abraham for his confounding.
 Anubis: I am no Pharaoh! But it matters not little one. Behold.
 do Global.show_scales()
 You: What is this?
-Anubis: This is the Scale of Justice. To measure these wretched souls.
+Anubis: These are the Scales of Justice. To measure these wretched souls.
 You: Like with the Feather or something?
 Anubis: Wise you are. Yes and No.
 	Ma’at is on vacation. You will take his place.
 You: Huh?
-Anubis: Here, use the junk in this trunk to balance the Scale.
+Anubis: Here, use these items to balance the Scale.
 do Global.show_inventory()
 Anubis: I will take my leave now.
 You: Wait, what?

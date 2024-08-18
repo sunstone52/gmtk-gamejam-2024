@@ -1,0 +1,126 @@
+[gd_scene load_steps=19 format=3 uid="uid://cebi66gxphkvp"]
+
+[ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_1akay"]
+[ext_resource type="Script" path="res://scripts/sound_controller.gd" id="3_wvbqk"]
+[ext_resource type="AudioStream" uid="uid://bskdyg8ocq6cq" path="res://assets/sounds/impactGeneric_light_000.ogg" id="4_f5ckc"]
+[ext_resource type="AudioStream" uid="uid://bi5hnspi8te22" path="res://assets/sounds/impactGeneric_light_001.ogg" id="5_x13a8"]
+[ext_resource type="AudioStream" uid="uid://claf7g53b0fjl" path="res://assets/sounds/impactGeneric_light_002.ogg" id="6_c6pf6"]
+[ext_resource type="AudioStream" uid="uid://va8m81q5rbia" path="res://assets/sounds/impactGeneric_light_003.ogg" id="7_ldvj8"]
+[ext_resource type="AudioStream" uid="uid://bxdw1sjhorupp" path="res://assets/sounds/impactGeneric_light_004.ogg" id="8_vxycx"]
+[ext_resource type="Script" path="res://scripts/burden_timer.gd" id="9_tgafl"]
+[ext_resource type="Script" path="res://scripts/marble.gd" id="10_w6f5c"]
+[ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="11_wbjux"]
+[ext_resource type="Texture2D" uid="uid://7efl5il8nte8" path="res://assets/sprites/coin.png" id="12_n7tvn"]
+[ext_resource type="Texture2D" uid="uid://g7o80c4vf6lm" path="res://assets/sprites/cat.png" id="13_tjk87"]
+[ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="14_l6b5e"]
+[ext_resource type="Script" path="res://scripts/respawns.gd" id="15_xv5my"]
+[ext_resource type="PackedScene" uid="uid://dlfwq8d4t1fgo" path="res://scenes/scale.tscn" id="16_if4jh"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nysj8"]
+streams_count = 5
+stream_0/stream = ExtResource("4_f5ckc")
+stream_1/stream = ExtResource("5_x13a8")
+stream_2/stream = ExtResource("6_c6pf6")
+stream_3/stream = ExtResource("7_ldvj8")
+stream_4/stream = ExtResource("8_vxycx")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_75dwd"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qbqu"]
+radius = 8.0
+
+[node name="Scene" type="Node2D"]
+position = Vector2(72, 0)
+
+[node name="Controllers" type="Node" parent="."]
+
+[node name="ObjectController" type="Node" parent="Controllers"]
+script = ExtResource("1_1akay")
+
+[node name="SoundController" type="Node" parent="Controllers"]
+unique_name_in_owner = true
+script = ExtResource("3_wvbqk")
+
+[node name="ImpactSound" type="AudioStreamPlayer" parent="Controllers/SoundController"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_nysj8")
+
+[node name="BurdenTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource("9_tgafl")
+
+[node name="Scale" parent="." instance=ExtResource("16_if4jh")]
+position = Vector2(-32, 0)
+
+[node name="RespawnPoint1" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(376, -32)
+
+[node name="RespawnPoint2" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(760, -32)
+
+[node name="Offscreen" type="Node2D" parent="."]
+physics_interpolation_mode = 2
+visible = false
+
+[node name="Burdens" type="Node2D" parent="Offscreen"]
+unique_name_in_owner = true
+
+[node name="Marble" type="RigidBody2D" parent="Offscreen/Burdens"]
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("10_w6f5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Marble"]
+scale = Vector2(0.128, 0.128)
+texture = ExtResource("11_wbjux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Marble"]
+shape = SubResource("CircleShape2D_75dwd")
+
+[node name="Coin" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(-34, -14)
+mass = 0.25
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("10_w6f5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Coin"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("12_n7tvn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Offscreen/Burdens/Coin"]
+shape = SubResource("CircleShape2D_7qbqu")
+
+[node name="Cat" type="RigidBody2D" parent="Offscreen/Burdens"]
+position = Vector2(40, 15)
+mass = 8.0
+freeze = true
+script = ExtResource("10_w6f5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Offscreen/Burdens/Cat"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_tjk87")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Offscreen/Burdens/Cat"]
+polygon = PackedVector2Array(23, -7, 29, -37, 4, -35, 6, -20, -18, -10, -29, 35, 18, 35, 14, 13)
+
+[node name="Scripts" type="Node" parent="Offscreen"]
+
+[node name="MouseControllable" type="Node" parent="Offscreen/Scripts"]
+unique_name_in_owner = true
+script = ExtResource("14_l6b5e")
+
+[node name="Respawns" type="Node" parent="Offscreen/Scripts"]
+unique_name_in_owner = true
+script = ExtResource("15_xv5my")
+
+[connection signal="body_entered" from="Offscreen/Burdens/Marble" to="Offscreen/Burdens/Marble" method="_on_body_entered"]
+[connection signal="impact" from="Offscreen/Burdens/Marble" to="Controllers/SoundController" method="_on_marble_impact"]
+[connection signal="body_entered" from="Offscreen/Burdens/Coin" to="Offscreen/Burdens/Coin" method="_on_body_entered"]
+[connection signal="impact" from="Offscreen/Burdens/Coin" to="Controllers/SoundController" method="_on_coin_impact"]

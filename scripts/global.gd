@@ -1,6 +1,6 @@
 extends Node
 
-var scales = preload("res://scenes/scale.tscn")
+var scales = preload("res://scenes/game_area.tscn")
 var blackscreen: bool = true
 var mouse_input: bool = true
 var scales_visible: bool = false
