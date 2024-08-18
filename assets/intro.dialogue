@@ -9,7 +9,7 @@ You: That’s a long name.
 ???: ...Bold human.
 ???: ...My name is Anubis.
 You: Like the Egyptian Pharaoh?
-Anubis: Pft, curses on Abraham for his confounding.
+Anubis: Pft, curse Abraham for his confounding.
 Anubis: I am no Pharaoh! But it matters not little one. Behold.
 do Global.show_scales()
 You: What is this?
@@ -17,15 +17,14 @@ Anubis: This is the Scale of Justice. To measure these wretched souls.
 You: Like with the Feather or something?
 Anubis: Wise you are. Yes and No.
 	Ma’at is on vacation. You will take his place.
-You: What?!?
+You: Huh?
 Anubis: Here, use the junk in this trunk to balance the Scale.
 do Global.show_inventory()
 Anubis: I will take my leave now.
-You: Wait, what? Hold o-
+You: Wait, what?
 Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
-do Global.hide_sprite()
 You: Hold on-
-Anubis: It appears a trial run is in order.
+Anubis: Oh look. It appears a trial run is in order.
 do Global.show_sprite("npc2")
 M: Greetings.
 Anubis: Backed the wrong horse. Still a saintly woman tho.
