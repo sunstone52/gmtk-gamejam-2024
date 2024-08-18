@@ -5,6 +5,7 @@ var grabbed = false
 var parent: PhysicsBody2D
 var parentCharacter: CharacterBody2D
 var parentRigid: RigidBody2D
+var objectController
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
