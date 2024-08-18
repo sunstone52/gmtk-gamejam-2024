@@ -1,7 +1,7 @@
 extends Node
 
-func play_impact_sound() -> void:
+func _on_marble_impact() -> void:
 	%ImpactSound.play()
 
-func _on_marble_impact() -> void:
-	play_impact_sound()
+func _on_coin_impact() -> void:
+	%ImpactSound.play()
