@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func add_script(node: Node, scriptNode: Node):
 	var scriptCopy = scriptNode.duplicate()
-	scriptCopy.owner = owner
+	scriptCopy.objectController = self
 	node.add_child(scriptCopy)
 
 func launch_random_burden() -> void:
