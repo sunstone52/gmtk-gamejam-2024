@@ -50,6 +50,9 @@ wait_time = 3.0
 autostart = true
 script = ExtResource("9_tgafl")
 
+[node name="Scale" parent="." instance=ExtResource("16_if4jh")]
+position = Vector2(696, 240)
+
 [node name="RespawnPoint1" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(488, -32)
@@ -117,9 +120,6 @@ unique_name_in_owner = true
 script = ExtResource("15_xv5my")
 
 [node name="Node2D" type="Node2D" parent="."]
-
-[node name="Scale" parent="." instance=ExtResource("16_if4jh")]
-position = Vector2(696, 240)
 
 [connection signal="body_entered" from="Offscreen/Burdens/Marble" to="Offscreen/Burdens/Marble" method="_on_body_entered"]
 [connection signal="impact" from="Offscreen/Burdens/Marble" to="Controllers/SoundController" method="_on_marble_impact"]
