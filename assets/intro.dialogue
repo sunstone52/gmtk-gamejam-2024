@@ -6,33 +6,37 @@ do Global.set_mouse_input(false)
 do wait(1.5)
 do Global.set_mouse_input(true)
 You: What is that dog thing??
-????: DOG THING?? Paltry child, I am The Canine Who Swallows Millions, Lord of Sacred Lands, The Royal Decay, Master of-
-You: That’s a long name.
-????: ...Bold human.
-????: ...My name is Anubis.
+????: DOG THING?? Paltry child! I am Lord of the Sacred Lands, Royal Decay, The Canine Who Swallows Millions, Master of-
+You: - That’s a long name.
+????: Bold human you are to interupt a god
+????: ... I am Anubis!
 You: Like the Egyptian Pharaoh?
-Anubis: Pft, curse Abraham for his confounding.
-Anubis: I am no Pharaoh! But it matters not little one. Behold.
+Anubis: Pfft
+Anubis: I am no Pharaoh! That matters not, little one. 
+Anubis: Behold.
 do Global.show_scales()
-You: What is this?
-Anubis: These are the Scales of Justice. To measure these wretched souls.
+You: What's that?
+Anubis: The Scales of Justice. They measure all wretched souls.
 You: Like with the Feather or something?
-Anubis: Wise you are. Yes and No.
-	Ma’at is on vacation. You will take his place.
+Anubis: Wise you are. Yet
+	Ma’at is on gusting vacation. You must take his place. 
+	Without plumage. 
 You: Huh?
 Anubis: Here, use these items to balance the Scale.
 do Global.show_inventory()
-Anubis: I will take my leave now.
+Anubis: I'll take my leave.
 You: Wait, what?
-Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND FEAST AND RECIEVE PETS. Do not perturb my vacation.
+Anubis: Anput has hidden bones throughout the sands of Akeht. 
+	I SHALL FETCH AND FEAST AND RECIEVE PETS.
+	   Do not perturb my own vacation.
 You: Hold on-
-Anubis: Oh look. It appears a trial run is in order.
+Anubis: It appears a trial run is necessitated.
 do Global.show_sprite("npc2")
-Stranger: Greetings.
+Stranger: Hello, I'm a bit lost?
 Anubis: Make not mistakes. Now, observe.
 do Global.place_feather
 Anubis: Balanced. You may pass.
-Stranger: Thank you.
+Stranger: Oh? Okay, Thank you.
 You: I don’t even have proper training for this...
 do Global.play_sound("leaving")
 
