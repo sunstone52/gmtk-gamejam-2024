@@ -1,8 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://cebi66gxphkvp"]
 
 [ext_resource type="Script" path="res://scripts/object_controller.gd" id="1_hc0t8"]
-[ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
+[ext_resource type="Script" path="res://scripts/arm.gd" id="2_sq6mw"]
 [ext_resource type="Script" path="res://scripts/mouse_controllable.gd" id="2_3qrog"]
+[ext_resource type="Texture2D" uid="uid://cvva14e7sm8vn" path="res://assets/icon.svg" id="1_lgvta"]
+[ext_resource type="Texture2D" uid="uid://bcpqw1rbfe5wu" path="res://assets/sprites/Arm.svg" id="3_mvdkf"]
+[ext_resource type="Texture2D" uid="uid://cow6te5r6u522" path="res://assets/sprites/Plate.svg" id="4_lcbbv"]
 [ext_resource type="Texture2D" uid="uid://do3k80ppaxw24" path="res://assets/sprites/marble.png" id="6_3ntnr"]
 [ext_resource type="Script" path="res://scripts/burden_timer.gd" id="6_dkxok"]
 [ext_resource type="Script" path="res://scripts/respawns.gd" id="6_gxnec"]
@@ -36,10 +39,12 @@ position = Vector2(600, 266)
 [node name="Arm" type="Node2D" parent="Scale"]
 
 [node name="Arm Pivot" type="PinJoint2D" parent="Scale/Arm"]
+position = Vector2(0, -100)
 node_a = NodePath("../Static")
 node_b = NodePath("../Arm")
 
 [node name="Static" type="StaticBody2D" parent="Scale/Arm"]
+position = Vector2(0, -100)
 scale = Vector2(0.191655, 0.191655)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Static"]
@@ -51,8 +56,9 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Scale/Arm/Arm"]
-scale = Vector2(3, 0.123)
-texture = ExtResource("1_lgvta")
+position = Vector2(0, -44.5)
+scale = Vector2(1.51311, 1.11818)
+texture = ExtResource("3_mvdkf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Arm/Arm"]
 shape = SubResource("RectangleShape2D_d1d0g")
@@ -70,11 +76,12 @@ mass = 4.0
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Scale/Right/Plate"]
-scale = Vector2(2.5, 0.161)
-texture = ExtResource("1_lgvta")
+position = Vector2(0, -123)
+scale = Vector2(1.75, 1.25)
+texture = ExtResource("4_lcbbv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Right/Plate"]
-shape = SubResource("RectangleShape2D_tht2w")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scale/Right/Plate"]
+polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, -110, 10)
 
 [node name="RightArea" type="Area2D" parent="Scale/Right/Plate"]
 unique_name_in_owner = true
@@ -113,11 +120,12 @@ mass = 4.0
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Scale/Left/Plate"]
-scale = Vector2(2.5, 0.161)
-texture = ExtResource("1_lgvta")
+position = Vector2(0, -123)
+scale = Vector2(1.75, 1.25)
+texture = ExtResource("4_lcbbv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale/Left/Plate"]
-shape = SubResource("RectangleShape2D_tht2w")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scale/Left/Plate"]
+polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -46, 110, 10, -110, 10)
 
 [node name="LeftArea" type="Area2D" parent="Scale/Left/Plate"]
 unique_name_in_owner = true

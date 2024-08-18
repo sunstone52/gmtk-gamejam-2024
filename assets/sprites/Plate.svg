@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="128.71201"
+   height="206.70599"
+   version="1.0"
+   id="svg28"
+   sodipodi:docname="Plate.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs32" />
+  <sodipodi:namedview
+     id="namedview30"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.8509705"
+     inkscape:cx="131.28248"
+     inkscape:cy="168.56022"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <path
+     stroke-linecap="square"
+     stroke-width="1.00001"
+     d="M 127.82394,165.83079 A 63.444234,40.375865 0 1 1 0.93560629,165.74696 l 63.44409671,0.0838 z"
+     overflow="visible"
+     style="fill:#eac102;stroke:#000000;marker:none"
+     id="path12" />
+  <path
+     fill-rule="evenodd"
+     stroke-linecap="round"
+     stroke-width="2"
+     d="M 64.35508,1.13231 1.0714197,165.52146 M 64.17703,1 127.71178,165.63911"
+     id="path14"
+     style="fill:#eac102;stroke:#000000" />
+  <path
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1"
+     d="m 127.38755,164.65834 a 63.443775,8.3506237 0 1 1 -126.88754967,0 63.443775,8.3506237 0 1 1 126.88754967,0 z"
+     id="path18"
+     style="fill:#eac102;stroke:#000000" />
+  <path
+     fill-rule="evenodd"
+     stroke-linecap="round"
+     stroke-width="1.99807"
+     d="m 64.391894,5.03565 0.08243,166.90819"
+     id="path24"
+     style="fill:#eac102;stroke:#000000" />
+</svg>
