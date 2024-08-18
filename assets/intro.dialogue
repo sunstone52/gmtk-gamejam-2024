@@ -28,12 +28,11 @@ Anubis: Anput has hidden bones throughout the sands of Akeht. I SHALL FETCH AND 
 You: Hold on-
 Anubis: Oh look. It appears a trial run is in order.
 do Global.show_sprite("npc2")
-M: Greetings.
-Anubis: Backed the wrong horse. Still a saintly woman tho.
-Anubis: Make not mistakes- now observe.
+Stranger: Greetings.
+Anubis: Make not mistakes. Now, observe.
 do Global.place_feather
-Anubis: Balanced. She may pass.
-M: Thank you, dearie.
+Anubis: Balanced. You may pass.
+Stranger: Thank you.
 You: I don’t even have proper training for this...
 do Global.play_sound("leaving")
 
