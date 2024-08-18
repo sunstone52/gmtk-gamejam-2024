@@ -2,8 +2,10 @@
 
 You: Huh? Where- wh-
 do Global.focus()
-do Global.show_sprite("anubis")
-You: What’s that dog thing??
+do Global.set_mouse_input(false)
+do wait(1.5)
+do Global.set_mouse_input(true)
+You: What is that dog thing??
 ???: DOG THING?? Paltry child, I am The Canine Who Swallows Millions, Lord of Sacred Lands, The Royal Decay, Master of-
 You: That’s a long name.
 ???: ...Bold human.

@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ssfwuy2blt4l"]
+[gd_scene load_steps=8 format=3 uid="uid://ssfwuy2blt4l"]
 
 [ext_resource type="Script" path="res://scripts/dialog/dialog.gd" id="1_f3t5c"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_3m6lp"]
+[ext_resource type="Texture2D" uid="uid://bw2ul0gyuvirm" path="res://assets/background.png" id="2_oi2nk"]
 [ext_resource type="Texture2D" uid="uid://deve8kursx3nx" path="res://assets/sprites/anubis_placeholder.png" id="3_i4b66"]
+[ext_resource type="Script" path="res://scripts/dialog/black_screen.gd" id="3_q1p8c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm75u"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_762y4"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 0.701961)
@@ -14,10 +19,12 @@ corner_radius_bottom_left = 8
 [node name="Dialog" type="Node2D"]
 script = ExtResource("1_f3t5c")
 
-[node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(1016, 487)
-scale = Vector2(0.712625, 0.712625)
-texture = ExtResource("3_i4b66")
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.72549, 0.694118, 0.811765)
+z_index = -1
+position = Vector2(635, 316)
+scale = Vector2(0.445804, 0.445804)
+texture = ExtResource("2_oi2nk")
 
 [node name="DialogBox" type="Control" parent="."]
 layout_mode = 3
@@ -27,6 +34,21 @@ offset_top = 560.0
 offset_right = 680.0
 offset_bottom = 600.0
 metadata/_edit_use_anchors_ = true
+
+[node name="CharacterSprite" type="Sprite2D" parent="DialogBox"]
+position = Vector2(376, -73)
+scale = Vector2(0.712625, 0.712625)
+texture = ExtResource("3_i4b66")
+
+[node name="BlackScreen" type="Panel" parent="DialogBox"]
+unique_name_in_owner = true
+visible = false
+offset_left = -640.0
+offset_top = -560.0
+offset_right = 642.0
+offset_bottom = 162.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tm75u")
+script = ExtResource("3_q1p8c")
 
 [node name="Panel" type="Panel" parent="DialogBox"]
 layout_mode = 1

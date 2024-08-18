@@ -1,10 +1,15 @@
 extends Node
 
 var scales = preload("res://scenes/scale.tscn")
+var blackscreen: bool = true
+var mouse_input: bool = true
 
 # Dialog functions
 func focus() -> void:
-	pass
+	blackscreen = false
+
+func set_mouse_input(cond: bool) -> void:
+	mouse_input = cond
 
 func show_scales() -> void:
 	var instance = scales.instantiate()

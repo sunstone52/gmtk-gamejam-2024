@@ -3,6 +3,7 @@ extends Node2D
 var resource: Resource
 var line: DialogueLine
 var typing: bool = false
+var enabled: bool = true
 
 func _ready() -> void:
 	resource = load("res://assets/intro.dialogue")
@@ -10,14 +11,15 @@ func _ready() -> void:
 	new_line()
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_released(&"diag_continue"):
+	if Input.is_action_just_released(&"diag_continue") and Global.mouse_input and enabled:
 		if not typing:
 			line = await resource.get_next_dialogue_line(line.next_id)
 			if line:
 				new_line()
 			else:
 				# end dialog
-				$".".queue_free()
+				$DialogBox.queue_free()
+				enabled = false
 		else:
 			%Text.skip_typing()
 			typing = false
