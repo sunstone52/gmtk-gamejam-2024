@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 	$Label.text = "%10.1f" % abs(diff)
 	
 	if diff > balance_limit:
-		$Label.text = "%10.1f\nOverbalanced!" % diff
+		$Label.text = "%10.1f\nOut of balance!" % diff

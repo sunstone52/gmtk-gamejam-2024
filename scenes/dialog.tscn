@@ -43,6 +43,7 @@ texture = ExtResource("3_i4b66")
 [node name="BlackScreen" type="Panel" parent="DialogBox"]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 offset_left = -640.0
 offset_top = -560.0
 offset_right = 642.0
