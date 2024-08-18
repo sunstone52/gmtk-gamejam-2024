@@ -41,6 +41,7 @@ radius = 15.0
 radius = 8.0
 
 [node name="Scene" type="Node2D"]
+position = Vector2(72, 0)
 
 [node name="Controllers" type="Node" parent="."]
 
@@ -51,9 +52,9 @@ script = ExtResource("1_hc0t8")
 script = ExtResource("7_g0sej")
 
 [node name="Label" type="Label" parent="Controllers/PlateController"]
-offset_left = 560.0
+offset_left = 632.0
 offset_top = 104.0
-offset_right = 600.0
+offset_right = 672.0
 offset_bottom = 127.0
 text = "0.0"
 
