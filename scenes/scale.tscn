@@ -123,6 +123,7 @@ polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -
 
 [node name="LeftLabel" type="Label" parent="Scale/Left/LeftPlate"]
 unique_name_in_owner = true
+visible = false
 offset_left = -40.0
 offset_top = 28.0
 offset_right = 1.0
@@ -170,6 +171,7 @@ polygon = PackedVector2Array(-110, -46, -91, -14, -44, 1, 44, 1, 91, -14, 110, -
 
 [node name="RightLabel" type="Label" parent="Scale/Right/RightPlate"]
 unique_name_in_owner = true
+visible = false
 offset_left = -40.0
 offset_top = 28.0
 offset_right = 1.0

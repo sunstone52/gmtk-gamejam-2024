@@ -17,18 +17,26 @@ func _process(delta: float) -> void:
 			if line:
 				new_line()
 			else:
-				# end dialog
-				$DialogBox.queue_free()
-				enabled = false
+				end()
 		else:
 			%Text.skip_typing()
 			typing = false
 
 func new_line() -> void:
-	%Speaker.text = line.character
-	%Text.dialogue_line = line
-	%Text.type_out()
-	typing = true
+	if enabled:
+		%Speaker.text = line.character
+		%Text.dialogue_line = line
+		%Text.type_out()
+		typing = true
+	
+func end() -> void:
+	$DialogBox.queue_free()
+	enabled = false
 
 func _on_text_finished_typing() -> void:
 	typing = false
+
+func _on_skip_pressed() -> void:
+	if not Global.scales_visible:
+		Global.show_scales()
+	end()

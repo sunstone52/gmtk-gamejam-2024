@@ -3,6 +3,7 @@ extends Node
 var scales = preload("res://scenes/scale.tscn")
 var blackscreen: bool = true
 var mouse_input: bool = true
+var scales_visible: bool = false
 
 # Dialog functions
 func focus() -> void:
@@ -14,6 +15,7 @@ func set_mouse_input(cond: bool) -> void:
 func show_scales() -> void:
 	var instance = scales.instantiate()
 	add_child(instance)
+	scales_visible = true
 
 func show_inventory() -> void:
 	pass

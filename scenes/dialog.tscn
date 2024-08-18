@@ -22,8 +22,8 @@ script = ExtResource("1_f3t5c")
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.807843, 0.72549, 0.694118, 0.811765)
 z_index = -1
-position = Vector2(635, 316)
-scale = Vector2(0.445804, 0.445804)
+position = Vector2(638.021, 318.266)
+scale = Vector2(0.447902, 0.447902)
 texture = ExtResource("2_oi2nk")
 
 [node name="DialogBox" type="Control" parent="."]
@@ -96,4 +96,13 @@ seconds_per_step = 0.03
 pause_at_characters = ".?!-"
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 
+[node name="Skip" type="Button" parent="DialogBox"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = -549.0
+offset_right = 634.0
+offset_bottom = -518.0
+text = "Skip"
+
 [connection signal="finished_typing" from="DialogBox/Text" to="." method="_on_text_finished_typing"]
+[connection signal="pressed" from="DialogBox/Skip" to="." method="_on_skip_pressed"]
