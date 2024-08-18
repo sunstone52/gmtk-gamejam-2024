@@ -31,7 +31,6 @@ radius = 15.0
 radius = 8.0
 
 [node name="Scene" type="Node2D"]
-position = Vector2(72, 0)
 
 [node name="Controllers" type="Node" parent="."]
 
@@ -52,15 +51,15 @@ autostart = true
 script = ExtResource("9_tgafl")
 
 [node name="Scale" parent="." instance=ExtResource("16_if4jh")]
-position = Vector2(-32, 0)
+position = Vector2(64, 0)
 
 [node name="RespawnPoint1" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(376, -32)
+position = Vector2(488, -32)
 
 [node name="RespawnPoint2" type="Node2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(760, -32)
+position = Vector2(872, -32)
 
 [node name="Offscreen" type="Node2D" parent="."]
 physics_interpolation_mode = 2
@@ -119,6 +118,8 @@ script = ExtResource("14_l6b5e")
 [node name="Respawns" type="Node" parent="Offscreen/Scripts"]
 unique_name_in_owner = true
 script = ExtResource("15_xv5my")
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="Offscreen/Burdens/Marble" to="Offscreen/Burdens/Marble" method="_on_body_entered"]
 [connection signal="impact" from="Offscreen/Burdens/Marble" to="Controllers/SoundController" method="_on_marble_impact"]

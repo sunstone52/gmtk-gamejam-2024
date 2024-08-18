@@ -4,6 +4,7 @@ var scales = preload("res://scenes/game_area.tscn")
 var blackscreen: bool = true
 var mouse_input: bool = true
 var scales_visible: bool = false
+var game_started: bool = false
 
 # Dialog functions
 func focus() -> void:

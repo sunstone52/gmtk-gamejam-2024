@@ -31,6 +31,7 @@ func new_line() -> void:
 	
 func end() -> void:
 	$DialogBox.queue_free()
+	Global.game_started = true
 	enabled = false
 
 func _on_text_finished_typing() -> void:
